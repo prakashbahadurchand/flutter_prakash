@@ -1,6 +1,6 @@
 name: flutter_prakash
 description: "Tedious tasks in flutter made easy."
-version: 0.0.3
+version: 0.0.4
 homepage: "https://github.com/prakashbahadurchand/flutter_prakash"
 
 environment:
@@ -11,9 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.1.7
-  # External Dependencies
+  cupertino_icons: ^1.0.6
   fluttertoast: ^8.2.4
   flutter_bloc: ^8.1.3
+  equatable: ^2.0.5
   flutter_hooks: ^0.20.3
   dio: ^5.4.0
   pretty_dio_logger: ^1.3.1
@@ -22,12 +23,46 @@ dependencies:
   permission_handler: ^11.1.0
   connectivity_plus: ^5.0.2
   nepali_date_picker: ^6.0.0
-
+  auto_size_text: ^3.0.0
+  firebase_core: ^2.24.0
+  firebase_crashlytics: ^3.4.6
+  firebase_messaging: ^14.7.6
+  easy_localization: ^3.0.3
+  flutter_screenutil: ^5.9.0
+  url_launcher: ^6.2.1
+  package_info_plus: ^5.0.1
+  upgrader: ^8.4.0
+  retrofit: ^4.0.3
+  in_app_review: ^2.0.8
+  gap: ^3.0.1
+  lottie: ^2.7.0
+  infinite_scroll_pagination: ^4.0.0
+  share_plus: ^7.2.1
+  collection: ^1.18.0
+  path_provider: ^2.1.1
+  logger: ^2.0.2+1
+  get: ^4.6.6
+  showcaseview: ^2.0.3
+  flutter_dotenv: ^5.1.0
+  carousel_slider: ^4.2.1
+  image_picker: ^1.0.4
+  image_cropper: ^5.0.1
+  webview_flutter: ^4.4.2
+  uni_links: ^0.5.1
+  flutter_form_builder: ^9.1.1
+  form_builder_validators: ^9.1.0
+  cached_network_image: ^3.3.0
+  shimmer: ^3.0.0
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.1
+
+  build_runner: ^2.4.7
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.6
 
 
 flutter:
