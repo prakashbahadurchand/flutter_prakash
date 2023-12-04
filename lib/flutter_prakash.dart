@@ -1,3 +1,4 @@
+export 'package:fluttertoast/fluttertoast.dart';
 
 import 'flutter_prakash_platform_interface.dart';
 
