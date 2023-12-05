@@ -22,7 +22,8 @@ class AppLocalizations {
   Map<String, String> _localizedStrings = {};
 
   Future<bool> load() async {
-    String jsonString = await rootBundle.loadString('assets/locale/locale_${locale.languageCode}.json');
+    String jsonString = await rootBundle
+        .loadString('assets/translations/${locale.languageCode}.json');
     Map<String, dynamic> jsonMap = json.decode(jsonString);
 
     _localizedStrings = jsonMap.map((key, value) {
@@ -47,7 +48,6 @@ class AppLocalizations {
     Locale('en'), // English
     Locale('ne'), // Nepali
   ];
-
 }
 
 class _AppLocalizationsDelegate

@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:nepali_date_picker/nepali_date_picker.dart';
 
-import '../config/app_globals.dart';
+import '../base/base_global.dart';
 
 class Utility {
   static Future<bool> checkConnectivity() async {
@@ -12,7 +12,6 @@ class Utility {
     return (result == ConnectivityResult.mobile ||
         result == ConnectivityResult.wifi);
   }
-
 }
 
 List<String> getOptionPairs(String pairSide) {
@@ -48,15 +47,33 @@ List<String> getOptionPairs(String pairSide) {
 }
 
 String getSelectedOptionYN(String selected) {
-  if (selected == "हो" || selected == "ठिक छ" || selected == "सही" ||
-      selected == "भए" || selected == "भएको" || selected == "राखेको" ||
-      selected == "गरेको छ" || selected == "गरेको" || selected == "हुन्छ" || selected == "छ" ||
-      selected == "सत्य" || selected == "मिल्छ" || selected == "सकिन्छ") {
+  if (selected == "हो" ||
+      selected == "ठिक छ" ||
+      selected == "सही" ||
+      selected == "भए" ||
+      selected == "भएको" ||
+      selected == "राखेको" ||
+      selected == "गरेको छ" ||
+      selected == "गरेको" ||
+      selected == "हुन्छ" ||
+      selected == "छ" ||
+      selected == "सत्य" ||
+      selected == "मिल्छ" ||
+      selected == "सकिन्छ") {
     return "Y";
-  } else if (selected == "होइन" || selected == "ठिक छैन" || selected == "गलत" ||
-      selected == "भएन" || selected == "नभएको" || selected == "नराखेको" ||
-      selected == "गरेको छैन" || selected == "नगरेको" || selected == "हुदैन" || selected == "छैन" ||
-      selected == "असत्य" || selected == "मिल्दैन" || selected == "सक्दैन") {
+  } else if (selected == "होइन" ||
+      selected == "ठिक छैन" ||
+      selected == "गलत" ||
+      selected == "भएन" ||
+      selected == "नभएको" ||
+      selected == "नराखेको" ||
+      selected == "गरेको छैन" ||
+      selected == "नगरेको" ||
+      selected == "हुदैन" ||
+      selected == "छैन" ||
+      selected == "असत्य" ||
+      selected == "मिल्दैन" ||
+      selected == "सक्दैन") {
     return "N";
   } else {
     return ""; // Handle the case when none of the conditions match
@@ -113,22 +130,22 @@ String generateNepaliFormattedFullDateTimeText(String dateTimeText) {
   final DateTime dateTime = DateTime.parse(dateTimeText);
   final NepaliDateTime nepaliDateTime = dateTime.toNepaliDateTime();
 
-  final NepaliDateFormat nepaliDateFormat = NepaliDateFormat.yMMMMEEEEd(Language.nepali);
-  final NepaliDateFormat nepaliTimeFormat = NepaliDateFormat.jms(Language.nepali);
+  final NepaliDateFormat nepaliDateFormat =
+      NepaliDateFormat.yMMMMEEEEd(Language.nepali);
+  final NepaliDateFormat nepaliTimeFormat =
+      NepaliDateFormat.jms(Language.nepali);
   final String formattedDate = nepaliDateFormat.format(nepaliDateTime);
   final String formattedTime = nepaliTimeFormat.format(nepaliDateTime);
   return "$formattedDate $formattedTime";
 }
 
-enum CrudOperationType {
-  get, create, update, delete
-}
+enum CrudOperationType { get, create, update, delete }
 
 String getImageUrl(String? checkUrl) {
   if (checkUrl == null) {
-    return AppGlobals.emptyImageUrl;
+    return BaseGlobal.emptyImageUrl;
   } else if (checkUrl.isEmpty) {
-    return AppGlobals.emptyImageUrl;
+    return BaseGlobal.emptyImageUrl;
   } else {
     return checkUrl;
   }

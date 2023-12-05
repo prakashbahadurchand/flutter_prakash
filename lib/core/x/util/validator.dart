@@ -1,4 +1,4 @@
-import '../config/app_globals.dart';
+import 'package:flutter_prakash/core/x/base/base_global.dart';
 
 class Validator {
   final RegExp regexForMobileNumber = RegExp(
@@ -14,7 +14,7 @@ class Validator {
           RegExp(
               r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
       if (!emailRegExp.hasMatch(input)) {
-        message = AppGlobals.isEn ? 'Invalid email format' : 'इमेल मान्य छैन';
+        message = BaseGlobal.isEn ? 'Invalid email format' : 'इमेल मान्य छैन';
       }
     }
     return message;
@@ -25,7 +25,7 @@ class Validator {
       return 'required*';
     }
     if (input.length < 8) {}
-    return AppGlobals.isEn
+    return BaseGlobal.isEn
         ? 'Password must be at least 8 characters'
         : 'पासवर्ड कम्तिमा आठ वर्णको हुनुपर्छ';
     //if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
@@ -48,7 +48,7 @@ class Validator {
             r'^(?:(?:9)[7][4-5]|(?:9)[8][0-2]|(?:9)[8][4|6]|(?:9)[8][5]|(?:9)[8][8])[0-9]{7}$')
         .hasMatch(input)) {
       message =
-          AppGlobals.isEn ? 'Invalid phone number' : 'फोन नम्बर मान्य छैन';
+          BaseGlobal.isEn ? 'Invalid phone number' : 'फोन नम्बर मान्य छैन';
     }
     return message;
   }
@@ -71,15 +71,15 @@ class Validator {
     if (isEmail &&
         !RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
             .hasMatch(input)) {
-      return AppGlobals.isEn ? 'Invalid email format' : 'इनपुट मान्य छैन';
+      return BaseGlobal.isEn ? 'Invalid email format' : 'इनपुट मान्य छैन';
     }
 
     if (isPhone && !RegExp(r'^\d{10}$').hasMatch(input)) {
-      return AppGlobals.isEn ? 'Invalid phone number' : 'फोन नम्बर मान्य छैन';
+      return BaseGlobal.isEn ? 'Invalid phone number' : 'फोन नम्बर मान्य छैन';
     }
 
     if (!isEmail && !isPhone) {
-      return AppGlobals.isEn ? 'Invalid input' : 'इनपुट मान्य छैन';
+      return BaseGlobal.isEn ? 'Invalid input' : 'इनपुट मान्य छैन';
     }
 
     return null;
