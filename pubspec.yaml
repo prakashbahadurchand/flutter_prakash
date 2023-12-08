@@ -1,6 +1,6 @@
 name: flutter_prakash
 description: "Tedious tasks in flutter made easy."
-version: 0.0.4
+version: 0.0.5
 homepage: "https://github.com/prakashbahadurchand/flutter_prakash"
 
 environment:
@@ -41,7 +41,7 @@ dependencies:
   collection: ^1.18.0
   path_provider: ^2.1.1
   logger: ^2.0.2+1
-  get: ^4.6.6
+  #get: ^4.6.6
   showcaseview: ^2.0.3
   flutter_dotenv: ^5.1.0
   carousel_slider: ^4.2.1
@@ -54,15 +54,18 @@ dependencies:
   cached_network_image: ^3.3.0
   shimmer: ^3.0.0
   intl: ^0.18.1
+  hydrated_bloc: ^9.1.2
+  json_annotation: ^4.8.1
+  freezed_annotation: ^2.4.1
+  #google_mobile_ads: ^4.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.1
-
-  build_runner: ^2.4.7
-  flutter_launcher_icons: ^0.13.1
-  flutter_native_splash: ^2.3.6
+  #flutter_lints: ^3.0.1
+  #build_runner: ^2.4.7
+  #flutter_launcher_icons: ^0.13.1
+  #flutter_native_splash: ^2.3.6
 
 
 flutter:

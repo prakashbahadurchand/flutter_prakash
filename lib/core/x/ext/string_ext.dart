@@ -50,7 +50,9 @@ extension StringNullExt on String? {
   static final List<String> arabicNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   static final List<String> nepaliUnicodeNumbers = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
 
-  String toNepaliDigit() {
+  String toND() => toNepaliDigits();
+
+  String toNepaliDigits() {
     if (this == null || this?.isEmpty == true) return "";
 
     final arabicNumberString = toString();
