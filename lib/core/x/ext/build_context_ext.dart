@@ -72,8 +72,6 @@ extension BuildContextExt on BuildContext {
     Navigator.of(this).pushNamedAndRemoveUntil(routeName, (route) => false);
   }
 
-
-
   // UI Related
 
   Widget buildLoadingUI() => const Expanded(
@@ -95,4 +93,42 @@ extension BuildContextExt on BuildContext {
           ],
         ),
       );
+
+  void snack(String message) {
+    final snackBar = SnackBar(
+      content: Text(message),
+      clipBehavior: Clip.antiAlias,
+      behavior: SnackBarBehavior.floating,
+      margin: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
+      elevation: 2.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+    );
+    ScaffoldMessenger.of(this).removeCurrentSnackBar();
+    ScaffoldMessenger.of(this).showSnackBar(snackBar);
+  }
 }
+
+/*
+* void showCustomSnackbar(BuildContext context, String message, {Color backgroundColor, Duration duration}) {
+  final snackBar = SnackBar(
+    content: Text(
+      message,
+      style: TextStyle(fontSize: 16.0, color: Colors.white),
+    ),
+    backgroundColor: backgroundColor ?? Colors.blue, // You can customize the background color
+    duration: duration ?? Duration(seconds: 3), // You can customize the duration
+    action: SnackBarAction(
+      label: 'OK',
+      onPressed: () {
+        // You can add an action when the user clicks on the action button
+        // For example, navigate to another screen or perform some other action
+        // Navigator.of(context).pushNamed('/some_route');
+      },
+    ),
+  );
+
+  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+}*/
