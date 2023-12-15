@@ -109,6 +109,33 @@ extension BuildContextExt on BuildContext {
     ScaffoldMessenger.of(this).removeCurrentSnackBar();
     ScaffoldMessenger.of(this).showSnackBar(snackBar);
   }
+
+  void banner(String contentText, String actionText, VoidCallback onAction) {
+    final banner = MaterialBanner(
+      content: Text(
+        contentText,
+        style: TextStyle(color: Colors.white),
+      ),
+      backgroundColor: Colors.blue,
+      actions: [
+        TextButton(
+          onPressed: () {
+            ScaffoldMessenger.of(this).hideCurrentMaterialBanner();
+            onAction();
+          },
+          child: Text(
+            actionText,
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ],
+    );
+
+    ScaffoldMessenger.of(this).removeCurrentMaterialBanner();
+    ScaffoldMessenger.of(this).showMaterialBanner(
+      banner,
+    );
+  }
 }
 
 /*
